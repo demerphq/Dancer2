@@ -372,7 +372,7 @@ sub _set_route_parameters {
 sub body_parameters {
     my $self = shift;
     # defer to (the overridden) Plack::Request->body_parameters
-    $self->env->{'plack.request.body'} ||= _decode($self->SUPER::body_parameters());
+    $self->{'body_parameters'} ||= _decode($self->SUPER::body_parameters());
 }
 
 sub parameters {
